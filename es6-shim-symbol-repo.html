@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/symbol-es6@0.1.2/symbol-es6.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.js"></script>
+  <script>
+
+      // get array iterator
+      var iterator = [1][Symbol.iterator]();
+
+      // pass array iterator to Set, array iterator is treated as iterable, es6-shim.js#L1073
+      // this line will throw error
+      new Set(iterator);
+  </script>
+
+</body>
+
+</html>
